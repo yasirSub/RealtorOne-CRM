@@ -24,7 +24,7 @@ services:
     build:
       context: ./client
       args:
-        REACT_APP_BASE_URL: https://crm.srv1872095.hstgr.cloud/
+        REACT_APP_BASE_URL: /
     restart: unless-stopped
     depends_on:
       - api
@@ -37,6 +37,10 @@ services:
       - traefik.http.routers.realtorone-crm.entrypoints=websecure
       - traefik.http.routers.realtorone-crm.rule=Host(`crm.srv1872095.hstgr.cloud`)
       - traefik.http.routers.realtorone-crm.tls.certresolver=letsencrypt
+      - traefik.http.routers.realtorone-crm-hub.entrypoints=websecure
+      - traefik.http.routers.realtorone-crm-hub.rule=Host(`crm.realtoronehub.com`)
+      - traefik.http.routers.realtorone-crm-hub.tls.certresolver=letsencrypt
+      - traefik.http.routers.realtorone-crm-hub.service=realtorone-crm
       - traefik.http.services.realtorone-crm.loadbalancer.server.port=80
 
 networks:

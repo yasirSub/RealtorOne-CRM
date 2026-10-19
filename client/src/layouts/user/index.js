@@ -8,6 +8,7 @@ import {
   Link,
   Flex,
   Icon,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Footer from "components/footer/FooterAdmin.js";
 // Layout components
@@ -331,7 +332,7 @@ export default function User(props) {
           />
           <Box
             float="right"
-            bg="#141414"
+            bg={useColorModeValue("#FAF9F5", "#141414")}
             minHeight="100vh"
             height="100%"
             overflow="auto"

@@ -36,6 +36,11 @@ export default function UserReports() {
   // Chakra Color Mode
   const brandColor = useColorModeValue("brand.500", "white");
   const boxBg = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
+  const sand = useColorModeValue("#5C584E", "#D1CFC0");
+  const good = useColorModeValue("#15803d", "#86efac");
+  const wait = useColorModeValue("#b45309", "#fbbf24");
+  const sold = useColorModeValue("#b91c1c", "#fca5a5");
+  const tileBorder = useColorModeValue("rgba(123,119,101,0.18)", "rgba(255,255,255,0.08)");
   const user = JSON.parse(localStorage.getItem("user"));
   const [isLoding, setIsLoding] = useState(false);
 
@@ -249,7 +254,7 @@ export default function UserReports() {
               !isLoding ?
                 data && data.length > 0 && data?.map((item, i) => (
                   <>
-                    <Box border={"1px solid rgba(255,255,255,0.08)"} p={2} m={1} cursor={'pointer'} key={i} onClick={() => navigate(navigateTo[item.name])}>
+                    <Box border={`1px solid ${tileBorder}`} p={2} m={1} cursor={'pointer'} key={i} onClick={() => navigate(navigateTo[item.name])}>
                       <Flex justifyContent={"space-between"}>
                         <Text fontSize="sm" fontWeight={600} pb={2}>{item?.name}</Text>
                         <Text fontSize="sm" fontWeight={600} pb={2}><CountUpComponent targetNumber={item?.length} /></Text>
@@ -275,8 +280,8 @@ export default function UserReports() {
                   cursor={"pointer"}
                   onClick={() => navigate('/lead')}
                   p={2} m={1} textAlign={"center"}>
-                  <Heading size="sm" pb={3} color={"#D1CFC0"}>Total Leads </Heading>
-                  <Text fontWeight={600} color={"#D1CFC0"}><CountUpComponent targetNumber={allData?.leadData?.length || 0} /> </Text>
+                  <Heading size="sm" pb={3} color={sand}>Total Leads </Heading>
+                  <Text fontWeight={600} color={sand}><CountUpComponent targetNumber={allData?.leadData?.length || 0} /> </Text>
                 </Box>
               </GridItem>
               <GridItem colSpan={{ base: 12, md: 6 }}>
@@ -285,8 +290,8 @@ export default function UserReports() {
                   cursor={"pointer"}
                   onClick={() => navigate('/lead', { state: 'active' })}
                   p={2} m={1} textAlign={"center"}>
-                  <Heading size="sm" pb={3} color={"#86efac"} >Active Leads </Heading>
-                  <Text fontWeight={600} color={"#86efac"}><CountUpComponent targetNumber={findLeadStatus("active")} /></Text>
+                  <Heading size="sm" pb={3} color={good} >Active Leads </Heading>
+                  <Text fontWeight={600} color={good}><CountUpComponent targetNumber={findLeadStatus("active")} /></Text>
                 </Box>
               </GridItem>
               <GridItem colSpan={{ base: 12, md: 6 }}>
@@ -295,8 +300,8 @@ export default function UserReports() {
                   borderRadius={"10px"}
                   cursor={"pointer"}
                   p={2} m={1} textAlign={"center"}>
-                  <Heading size="sm" pb={3} color={"#fbbf24"}>Pending Leads</Heading>
-                  <Text fontWeight={600} color={"#fbbf24"}><CountUpComponent targetNumber={findLeadStatus("pending")} /></Text>
+                  <Heading size="sm" pb={3} color={wait}>Pending Leads</Heading>
+                  <Text fontWeight={600} color={wait}><CountUpComponent targetNumber={findLeadStatus("pending")} /></Text>
                 </Box>
               </GridItem>
 
@@ -306,8 +311,8 @@ export default function UserReports() {
                   cursor={"pointer"}
                   onClick={() => navigate('/lead', { state: 'sold' })}
                   p={2} m={1} textAlign={"center"}>
-                  <Heading size="sm" pb={3} color={"#fca5a5"}>Sold Leads </Heading>
-                  <Text fontWeight={600} color={"#fca5a5"}><CountUpComponent targetNumber={findLeadStatus("sold")} /></Text>
+                  <Heading size="sm" pb={3} color={sold}>Sold Leads </Heading>
+                  <Text fontWeight={600} color={sold}><CountUpComponent targetNumber={findLeadStatus("sold")} /></Text>
                 </Box>
               </GridItem>
             </Grid>
@@ -326,8 +331,8 @@ export default function UserReports() {
                 onClick={() => navigate('/task')}
                 borderRadius={"10px"} cursor={'pointer'}
                 p={2} m={1} textAlign={"center"}>
-                <Heading size="sm" pb={3} color={"#D1CFC0"}>Total Tasks </Heading>
-                <Text fontWeight={600} color={"#D1CFC0"}><CountUpComponent targetNumber={allData?.taskData?.length || 0} /></Text>
+                <Heading size="sm" pb={3} color={sand}>Total Tasks </Heading>
+                <Text fontWeight={600} color={sand}><CountUpComponent targetNumber={allData?.taskData?.length || 0} /></Text>
               </Box>
             </GridItem>
           </Grid>

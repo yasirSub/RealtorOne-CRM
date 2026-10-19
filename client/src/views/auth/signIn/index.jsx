@@ -98,6 +98,7 @@ function SignIn() {
 
   return (
     <Flex
+      className="ro-auth"
       minH="100vh"
       align="center"
       justify="center"

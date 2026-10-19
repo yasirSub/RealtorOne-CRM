@@ -1,5 +1,5 @@
 // Chakra imports
-import { Portal, Box, useDisclosure, Flex, Icon } from "@chakra-ui/react";
+import { Portal, Box, useDisclosure, Flex, Icon, useColorModeValue } from "@chakra-ui/react";
 import Footer from "components/footer/FooterAdmin.js";
 // Layout components
 import Navbar from "components/navbar/NavbarAdmin.js";
@@ -341,7 +341,7 @@ export default function Dashboard(props) {
           />
           <Box
             float="right"
-            bg="#141414"
+            bg={useColorModeValue("#FAF9F5", "#141414")}
             minHeight="100vh"
             height="100%"
             overflow="auto"

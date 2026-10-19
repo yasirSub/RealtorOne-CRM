@@ -329,97 +329,125 @@ option {
   font-style: italic;
 }
 
-/* Realtor One admin skin — every desk surface */
-.chakra-card,
-.chakra-modal__content,
-.chakra-menu__menu-list,
-.chakra-popover__content,
-.chakra-modal__header,
-.chakra-modal__body,
-.chakra-modal__footer {
+/* Realtor One admin skin — light and dark */
+html.chakra-ui-light,
+html.chakra-ui-light body,
+html.chakra-ui-light #root {
+  background: #faf9f5;
+  color: #2a2824;
+}
+
+html.chakra-ui-dark,
+html.chakra-ui-dark body,
+html.chakra-ui-dark #root {
+  background: #141414;
+  color: #ecece9;
+}
+
+html.chakra-ui-light .chakra-card,
+html.chakra-ui-light .chakra-modal__content,
+html.chakra-ui-light .chakra-menu__menu-list,
+html.chakra-ui-light .chakra-popover__content {
+  background: #ffffff !important;
+  color: #2a2824;
+  border-color: rgba(123, 119, 101, 0.18) !important;
+}
+
+html.chakra-ui-dark .chakra-card,
+html.chakra-ui-dark .chakra-modal__content,
+html.chakra-ui-dark .chakra-menu__menu-list,
+html.chakra-ui-dark .chakra-popover__content,
+html.chakra-ui-dark .chakra-modal__header,
+html.chakra-ui-dark .chakra-modal__body,
+html.chakra-ui-dark .chakra-modal__footer {
   background: #1c1c1c !important;
   color: #ecece9;
-  border-color: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-.chakra-modal__content,
-.chakra-menu__menu-list,
-.chakra-popover__content {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+html.chakra-ui-light .chakra-form__label,
+html.chakra-ui-light .chakra-menu__menuitem,
+html.chakra-ui-light .chakra-modal__header,
+html.chakra-ui-light .chakra-modal__body {
+  color: #2a2824;
 }
 
-.chakra-menu__menuitem,
-.chakra-modal__header,
-.chakra-modal__body,
-.chakra-form__label {
-  color: #ecece9;
+html.chakra-ui-dark .chakra-form__label,
+html.chakra-ui-dark .chakra-menu__menuitem,
+html.chakra-ui-dark .chakra-modal__header,
+html.chakra-ui-dark .chakra-modal__body,
+html.chakra-ui-dark .chakra-heading,
+html.chakra-ui-dark .chakra-text {
+  color: #ecece9 !important;
 }
 
-.chakra-menu__menuitem:hover,
-.chakra-menu__menuitem:focus {
-  background: rgba(209, 207, 192, 0.08) !important;
+html.chakra-ui-light .table-container thead,
+html.chakra-ui-light .table-container-property thead,
+html.chakra-ui-light .table-fix-container thead {
+  background: #f4f1e8;
+  border-bottom-color: rgba(123, 119, 101, 0.18);
 }
 
-.chakra-input,
-.chakra-textarea,
-.chakra-select,
-.chakra-numberinput__field {
+html.chakra-ui-light .chakra-input,
+html.chakra-ui-light .chakra-textarea,
+html.chakra-ui-light .chakra-select,
+html.chakra-ui-light .chakra-numberinput__field {
+  background: #ffffff !important;
+  color: #2a2824 !important;
+  border-color: rgba(123, 119, 101, 0.28) !important;
+}
+
+html.chakra-ui-dark .chakra-input,
+html.chakra-ui-dark .chakra-textarea,
+html.chakra-ui-dark .chakra-select,
+html.chakra-ui-dark .chakra-numberinput__field {
   background: #141414 !important;
   color: #ecece9 !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  border-radius: 12px !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
 }
 
-.chakra-input::placeholder,
-.chakra-textarea::placeholder {
-  color: #8c8c88;
+.ro-auth,
+.ro-auth .chakra-text,
+.ro-auth .chakra-heading,
+.ro-auth .chakra-form__label {
+  color: #ecece9 !important;
 }
 
-.chakra-input:focus,
-.chakra-textarea:focus,
-.chakra-select:focus {
-  border-color: #d1cfc0 !important;
-  box-shadow: 0 0 0 3px rgba(209, 207, 192, 0.15) !important;
+.ro-auth .chakra-input,
+.ro-auth .chakra-textarea {
+  background: #1c1c1c !important;
+  color: #ecece9 !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
 }
 
-.chakra-table,
-.chakra-table td,
-.chakra-table th {
-  border-color: rgba(255, 255, 255, 0.06) !important;
+html.chakra-ui-light .chakra-table th,
+html.chakra-ui-light .chakra-table th span,
+html.chakra-ui-light .chakra-table td {
+  color: #2a2824 !important;
+  border-color: rgba(123, 119, 101, 0.18) !important;
 }
 
-.chakra-table th,
-.chakra-table th span {
-  color: #8c8c88 !important;
-  background: transparent;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+html.chakra-ui-dark .chakra-table th,
+html.chakra-ui-dark .chakra-table th span {
+  color: #c3c3bf !important;
 }
 
-.chakra-table td {
-  color: #ecece9;
+html.chakra-ui-dark .chakra-table td {
+  color: #ecece9 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-.chakra-table tbody tr:hover {
-  background: rgba(209, 207, 192, 0.05);
+html.chakra-ui-light .chakra-tabs__tab[aria-selected="true"] {
+  color: #5c584e !important;
+  border-color: #7c7865 !important;
 }
 
-.chakra-tabs__tab[aria-selected="true"] {
+html.chakra-ui-dark .chakra-tabs__tab[aria-selected="true"] {
   color: #d1cfc0 !important;
   border-color: #d1cfc0 !important;
 }
 
-.chakra-checkbox__control[data-checked] {
-  background: #d1cfc0 !important;
-  border-color: #d1cfc0 !important;
-  color: #141414 !important;
-}
-
 #root {
-  background: #141414;
   min-height: 100vh;
 }
 
@@ -437,6 +465,18 @@ option {
   color: #8c8c88 !important;
 }
 
-.apexcharts-gridline {
+html.chakra-ui-dark .apexcharts-gridline {
   stroke: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.chakra-ui-light .apexcharts-text,
+html.chakra-ui-light .apexcharts-legend-text,
+html.chakra-ui-light .apexcharts-xaxis-label,
+html.chakra-ui-light .apexcharts-yaxis-label {
+  fill: #5c584e !important;
+  color: #5c584e !important;
+}
+
+html.chakra-ui-light .apexcharts-gridline {
+  stroke: rgba(42, 40, 36, 0.12) !important;
 }

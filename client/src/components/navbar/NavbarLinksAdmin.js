@@ -4,12 +4,14 @@ import {
   Button,
   Flex,
   Icon,
+  IconButton,
   Image,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
   Text,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 // Custom Components
@@ -20,6 +22,7 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 // Assets
 import { MdInfoOutline, MdNotificationsNone } from "react-icons/md";
+import { IoMdMoon, IoMdSunny } from "react-icons/io";
 import { FaEthereum } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { getApi } from "services/api";
@@ -31,7 +34,8 @@ import { useDispatch, useSelector } from "react-redux";
 export default function HeaderLinks(props) {
   const { secondary, setOpenSidebar, openSidebar, routes } = props;
   // Chakra Color Mode
-  const navbarIcon = useColorModeValue("gray.400", "white");
+  const { colorMode, toggleColorMode } = useColorMode();
+  const navbarIcon = useColorModeValue("gray.600", "white");
   let menuBg = useColorModeValue("white", "navy.800");
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const textColorBrand = useColorModeValue("brand.700", "brand.400");
@@ -220,6 +224,15 @@ export default function HeaderLinks(props) {
       {/* <FixedPlugin /> */}
       {/* <ThemeEditor navbarIcon={navbarIcon} /> */}
 
+      <IconButton
+        aria-label={colorMode === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+        icon={<Icon as={colorMode === "dark" ? IoMdSunny : IoMdMoon} w="18px" h="18px" />}
+        onClick={toggleColorMode}
+        variant="ghost"
+        color={navbarIcon}
+        borderRadius="12px"
+        me="8px"
+      />
       <Menu style={{ zIndex: 1500 }}>
         <MenuButton p="0px">
           <Avatar

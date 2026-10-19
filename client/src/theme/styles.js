@@ -1,3 +1,5 @@
+import { mode } from "@chakra-ui/theme-tools";
+
 export const globalStyles = {
   colors: {
     brand: {
@@ -34,15 +36,15 @@ export const globalStyles = {
       900: "#141414",
     },
     secondaryGray: {
-      100: "#2A2A28",
-      200: "#242422",
-      300: "#1C1C1C",
-      400: "#3A3A36",
-      500: "#8C8C88",
-      600: "#A39E92",
-      700: "#C3C3BF",
-      800: "#D1CFC0",
-      900: "#ECECE9",
+      100: "#E8E4D8",
+      200: "#F3EFE4",
+      300: "#FAF9F5",
+      400: "#E4E0D4",
+      500: "#8C877B",
+      600: "#5C584E",
+      700: "#4A463C",
+      800: "#3A362E",
+      900: "#2A2824",
     },
     red: {
       100: "#FEEFEE",
@@ -76,28 +78,28 @@ export const globalStyles = {
       900: "#141414",
     },
     gray: {
-      100: "#1C1C1C",
-      200: "#2A2A28",
-      300: "#3A3A36",
-      400: "#8C8C88",
-      500: "#A39E92",
-      600: "#C3C3BF",
-      700: "#D1CFC0",
-      800: "#E4E0D4",
-      900: "#ECECE9",
+      100: "#F4F1E8",
+      200: "#E4E0D4",
+      300: "#D1CFC0",
+      400: "#8C877B",
+      500: "#5C584E",
+      600: "#4A463C",
+      700: "#2A2824",
+      800: "#1C1C1C",
+      900: "#141414",
     },
   },
   styles: {
-    global: () => ({
+    global: (props) => ({
       body: {
         overflowX: "hidden",
-        bg: "#141414",
+        bg: mode("#FAF9F5", "#141414")(props),
         fontFamily: "Inter, sans-serif",
-        color: "#ECECE9",
+        color: mode("#2A2824", "#ECECE9")(props),
         letterSpacing: "-0.2px",
       },
       input: {
-        color: "#ECECE9",
+        color: mode("#2A2824", "#ECECE9")(props),
       },
       html: {
         fontFamily: "Inter,sans-serif",

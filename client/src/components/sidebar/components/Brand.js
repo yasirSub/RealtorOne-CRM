@@ -1,10 +1,11 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex, Image, useColorModeValue } from "@chakra-ui/react";
 import RealtorOneMark from "components/brand/RealtorOneMark";
 
 export function SidebarBrand(props) {
   const { setOpenSidebar, openSidebar, from, largeLogo } = props;
   const uploaded =
     largeLogo && (largeLogo[0]?.logoLgImg || largeLogo[0]?.logoSmImg);
+  const barBg = useColorModeValue("#FAF9F5", "#141414");
 
   return (
     <Flex
@@ -14,7 +15,7 @@ export function SidebarBrand(props) {
         position: "sticky",
         top: "0",
         left: "0",
-        background: "#141414",
+        background: barBg,
         zIndex: 2,
       }}
     >

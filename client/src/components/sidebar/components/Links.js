@@ -9,18 +9,23 @@ import {
   HStack,
   Text,
   Tooltip,
+  useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 
 export function SidebarLinks(props) {
   //   Chakra color mode
   let location = useLocation();
-  let activeColor = "#F4F1E8";
-  let inactiveColor = "#A39E92";
-  let activeIcon = "#C4A35A";
-  let textColor = "#A39E92";
-  let brandColor = "#C4A35A";
-  let sidebarBgColor = "rgba(209, 207, 192, 0.12)";
+  let activeColor = useColorModeValue("#2A2824", "#F4F1E8");
+  let inactiveColor = useColorModeValue("#5C584E", "#A39E92");
+  let activeIcon = useColorModeValue("#7C7865", "#D1CFC0");
+  let textColor = useColorModeValue("#5C584E", "#C3C3BF");
+  let brandColor = useColorModeValue("#7C7865", "#D1CFC0");
+  let sidebarBgColor = useColorModeValue(
+    "rgba(124, 120, 101, 0.12)",
+    "rgba(209, 207, 192, 0.12)",
+  );
+  let separatorBg = useColorModeValue("#FAF9F5", "#141414");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const user = JSON.parse(localStorage.getItem("user"));
@@ -68,8 +73,8 @@ export function SidebarLinks(props) {
                 <Divider />
                 <AbsoluteCenter
                   textTransform={"capitalize"}
-                  bg="#141414"
-                  color="#A39E92"
+                  bg={separatorBg}
+                  color={inactiveColor}
                   width={"max-content"}
                   padding="0 10px"
                   textAlign={"center"}

@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactApexChart from "react-apexcharts";
-import { HasAccess } from "../../redux/accessUtils";
+import { useColorMode } from "@chakra-ui/react";
 
 const ApexChart = (props) => {
   const { data } = props;
+  const { colorMode } = useColorMode();
+  const dark = colorMode === "dark";
+  const ink = dark ? "#C3C3BF" : "#5C584E";
 
   let permissions = [];
   let permissionsLength = [];
@@ -26,7 +29,12 @@ const ApexChart = (props) => {
       chart: {
         height: 350,
         type: "bar",
+        background: "transparent",
+        foreColor: ink,
+        toolbar: { show: false },
       },
+      theme: { mode: dark ? "dark" : "light" },
+      colors: ["#C4A35A"],
       plotOptions: {
         bar: {
           borderRadius: 10,
@@ -34,35 +42,28 @@ const ApexChart = (props) => {
         },
       },
       stroke: {
-        width: 2,
+        width: 0,
       },
       grid: {
-        row: {
-          colors: ["#fff", "#f2f2f2"],
-        },
+        borderColor: dark ? "rgba(255,255,255,0.08)" : "rgba(42,40,36,0.12)",
       },
       xaxis: {
         categories: permissions?.map((item) => item),
         tickPlacement: "on",
+        labels: { style: { colors: ink } },
       },
-
+      yaxis: {
+        labels: { style: { colors: ink } },
+      },
       fill: {
-        type: "gradient",
-        gradient: {
-          shade: "light",
-          type: "horizontal",
-          shadeIntensity: 0.25,
-          inverseColors: true,
-          opacityFrom: 0.85,
-          opacityTo: 0.85,
-          stops: [50, 0, 100],
-        },
+        opacity: 0.9,
       },
     },
   };
   return (
     <div id="chart">
       <ReactApexChart
+        key={colorMode}
         options={state?.options}
         series={state?.series}
         type="bar"

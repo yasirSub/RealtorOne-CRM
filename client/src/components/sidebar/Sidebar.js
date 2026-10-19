@@ -8,6 +8,7 @@ import {
   DrawerBody,
   Icon,
   DrawerOverlay,
+  useColorModeValue,
   useDisclosure,
   DrawerContent,
   DrawerCloseButton,
@@ -29,7 +30,11 @@ function Sidebar(props) {
 
   let variantChange = "0.2s linear";
   let shadow = "none";
-  let sidebarBg = "#141414";
+  let sidebarBg = useColorModeValue("#FAF9F5", "#141414");
+  let sidebarBorder = useColorModeValue(
+    "rgba(123,119,101,0.18)",
+    "rgba(255,255,255,0.06)",
+  );
   let sidebarMargins = "0px";
   const { isOpen, onOpen, onClose } = useDisclosure();
   // SIDEBAR
@@ -50,7 +55,8 @@ function Sidebar(props) {
         minH="100%"
         overflowX="hidden"
         boxShadow={shadow}
-        borderRight="1px solid rgba(255,255,255,0.06)"
+        borderRight="1px solid"
+        borderColor={sidebarBorder}
       >
         <Scrollbars
           autoHide
@@ -72,8 +78,8 @@ function Sidebar(props) {
 
 // FUNCTIONS
 export function SidebarResponsive(props) {
-  let sidebarBackgroundColor = "#141414";
-  let menuColor = "#D1CFC0";
+  let sidebarBackgroundColor = useColorModeValue("#FAF9F5", "#141414");
+  let menuColor = useColorModeValue("#5C584E", "#D1CFC0");
   // // SIDEBAR
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
