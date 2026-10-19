@@ -41,18 +41,29 @@ const ReportChart = (props) => {
   const options = {
     chart: {
       id: "line-chart",
+      background: "transparent",
+      foreColor: "#A39E92",
+      toolbar: { show: false },
     },
+    theme: { mode: "dark" },
+    colors: ["#D1CFC0", "#C4A35A"],
+    grid: { borderColor: "rgba(255,255,255,0.06)" },
+    stroke: { curve: "smooth", width: 2 },
+    fill: {
+      type: "gradient",
+      gradient: { shadeIntensity: 0.4, opacityFrom: 0.28, opacityTo: 0.02 },
+    },
+    dataLabels: { enabled: false },
     xaxis: {
       type: "datetime",
+      labels: { style: { colors: "#8C8C88" } },
+      axisBorder: { color: "rgba(255,255,255,0.08)" },
     },
     yaxis: {
-      title: {
-        text: "Count",
-      },
+      title: { text: "Count", style: { color: "#8C8C88" } },
+      labels: { style: { colors: "#8C8C88" } },
     },
-    dataLabels: {
-      enabled: true,
-    },
+    tooltip: { theme: "dark" },
   };
 
   const series = Object?.keys(reportChart)?.map((key) => {

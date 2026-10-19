@@ -74,12 +74,12 @@ option {
 }
 
 .table-container thead {
-  border-bottom: 1px solid black;
-  box-shadow: -2px 0px 4px -2px #5c5d5efa;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
   position: sticky;
   top: 0;
   height: 25px;
-  background: #ffffff;
+  background: #1c1c1c;
 }
 
 .table-container-property {
@@ -97,9 +97,9 @@ option {
   position: sticky;
   top: 0;
   height: 25px;
-  background: #ffffff;
-  border-bottom: 1px solid black;
-  box-shadow: -2px 0px 4px -2px #5c5d5efa;
+  background: #1c1c1c;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .table-fix-container {
@@ -115,12 +115,12 @@ option {
 }
 
 .table-fix-container thead {
-  border-bottom: 1px solid black;
-  box-shadow: -2px 0px 4px -2px #5c5d5efa;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
   position: sticky;
   top: 0;
   height: 25px;
-  background: #ffffff;
+  background: #1c1c1c;
 }
 
 .importTable {
@@ -327,4 +327,116 @@ option {
   margin-top: 20px;
   text-align: center;
   font-style: italic;
+}
+
+/* Realtor One admin skin — every desk surface */
+.chakra-card,
+.chakra-modal__content,
+.chakra-menu__menu-list,
+.chakra-popover__content,
+.chakra-modal__header,
+.chakra-modal__body,
+.chakra-modal__footer {
+  background: #1c1c1c !important;
+  color: #ecece9;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.chakra-modal__content,
+.chakra-menu__menu-list,
+.chakra-popover__content {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+}
+
+.chakra-menu__menuitem,
+.chakra-modal__header,
+.chakra-modal__body,
+.chakra-form__label {
+  color: #ecece9;
+}
+
+.chakra-menu__menuitem:hover,
+.chakra-menu__menuitem:focus {
+  background: rgba(209, 207, 192, 0.08) !important;
+}
+
+.chakra-input,
+.chakra-textarea,
+.chakra-select,
+.chakra-numberinput__field {
+  background: #141414 !important;
+  color: #ecece9 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+.chakra-input::placeholder,
+.chakra-textarea::placeholder {
+  color: #8c8c88;
+}
+
+.chakra-input:focus,
+.chakra-textarea:focus,
+.chakra-select:focus {
+  border-color: #d1cfc0 !important;
+  box-shadow: 0 0 0 3px rgba(209, 207, 192, 0.15) !important;
+}
+
+.chakra-table,
+.chakra-table td,
+.chakra-table th {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.chakra-table th,
+.chakra-table th span {
+  color: #8c8c88 !important;
+  background: transparent;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chakra-table td {
+  color: #ecece9;
+}
+
+.chakra-table tbody tr:hover {
+  background: rgba(209, 207, 192, 0.05);
+}
+
+.chakra-tabs__tab[aria-selected="true"] {
+  color: #d1cfc0 !important;
+  border-color: #d1cfc0 !important;
+}
+
+.chakra-checkbox__control[data-checked] {
+  background: #d1cfc0 !important;
+  border-color: #d1cfc0 !important;
+  color: #141414 !important;
+}
+
+#root {
+  background: #141414;
+  min-height: 100vh;
+}
+
+.apexcharts-canvas,
+.apexcharts-svg,
+.apexcharts-inner {
+  background: transparent !important;
+}
+
+.apexcharts-text,
+.apexcharts-legend-text,
+.apexcharts-xaxis-label,
+.apexcharts-yaxis-label {
+  fill: #8c8c88 !important;
+  color: #8c8c88 !important;
+}
+
+.apexcharts-gridline {
+  stroke: rgba(255, 255, 255, 0.08) !important;
 }

@@ -97,7 +97,7 @@ export default function UserReports() {
       name: "Pending",
       status: 'pending',
       length: findTaskStatus('pending'),
-      color: "#a37f08"
+      color: "#fbbf24"
     },
     {
       name: "In Progress",
@@ -109,7 +109,7 @@ export default function UserReports() {
       name: "Todo",
       status: 'todo',
       length: findTaskStatus('todo'),
-      color: "#1f7eeb"
+      color: "#D1CFC0"
     },
     {
       name: "On Hold",
@@ -249,7 +249,7 @@ export default function UserReports() {
               !isLoding ?
                 data && data.length > 0 && data?.map((item, i) => (
                   <>
-                    <Box border={"1px solid #e5e5e5"} p={2} m={1} cursor={'pointer'} key={i} onClick={() => navigate(navigateTo[item.name])}>
+                    <Box border={"1px solid rgba(255,255,255,0.08)"} p={2} m={1} cursor={'pointer'} key={i} onClick={() => navigate(navigateTo[item.name])}>
                       <Flex justifyContent={"space-between"}>
                         <Text fontSize="sm" fontWeight={600} pb={2}>{item?.name}</Text>
                         <Text fontSize="sm" fontWeight={600} pb={2}><CountUpComponent targetNumber={item?.length} /></Text>
@@ -270,44 +270,44 @@ export default function UserReports() {
           {(leadView?.view) &&
             <Grid templateColumns="repeat(12, 1fr)" gap={2}>
               <GridItem colSpan={{ base: 12, md: 6 }}>
-                <Box backgroundColor={"#ebf5ff"}
+                <Box backgroundColor={"rgba(209,207,192,0.1)"}
                   borderRadius={"10px"}
                   cursor={"pointer"}
                   onClick={() => navigate('/lead')}
                   p={2} m={1} textAlign={"center"}>
-                  <Heading size="sm" pb={3} color={"#1f7eeb"}>Total Leads </Heading>
-                  <Text fontWeight={600} color={"#1f7eeb"}><CountUpComponent targetNumber={allData?.leadData?.length || 0} /> </Text>
+                  <Heading size="sm" pb={3} color={"#D1CFC0"}>Total Leads </Heading>
+                  <Text fontWeight={600} color={"#D1CFC0"}><CountUpComponent targetNumber={allData?.leadData?.length || 0} /> </Text>
                 </Box>
               </GridItem>
               <GridItem colSpan={{ base: 12, md: 6 }}>
-                <Box backgroundColor={"#eaf9e6"}
+                <Box backgroundColor={"rgba(34,197,94,0.12)"}
                   borderRadius={"10px"}
                   cursor={"pointer"}
                   onClick={() => navigate('/lead', { state: 'active' })}
                   p={2} m={1} textAlign={"center"}>
-                  <Heading size="sm" pb={3} color={"#43882f"} >Active Leads </Heading>
-                  <Text fontWeight={600} color={"#43882f"}><CountUpComponent targetNumber={findLeadStatus("active")} /></Text>
+                  <Heading size="sm" pb={3} color={"#86efac"} >Active Leads </Heading>
+                  <Text fontWeight={600} color={"#86efac"}><CountUpComponent targetNumber={findLeadStatus("active")} /></Text>
                 </Box>
               </GridItem>
               <GridItem colSpan={{ base: 12, md: 6 }}>
-                <Box backgroundColor={"#fbf4dd"}
+                <Box backgroundColor={"rgba(245,158,11,0.12)"}
                   onClick={() => navigate('/lead', { state: 'pending' })}
                   borderRadius={"10px"}
                   cursor={"pointer"}
                   p={2} m={1} textAlign={"center"}>
-                  <Heading size="sm" pb={3} color={"#a37f08"}>Pending Leads</Heading>
-                  <Text fontWeight={600} color={"#a37f08"}><CountUpComponent targetNumber={findLeadStatus("pending")} /></Text>
+                  <Heading size="sm" pb={3} color={"#fbbf24"}>Pending Leads</Heading>
+                  <Text fontWeight={600} color={"#fbbf24"}><CountUpComponent targetNumber={findLeadStatus("pending")} /></Text>
                 </Box>
               </GridItem>
 
               <GridItem colSpan={{ base: 12, md: 6 }}>
-                <Box backgroundColor={"#ffeeeb"}
+                <Box backgroundColor={"rgba(239,68,68,0.12)"}
                   borderRadius={"10px"}
                   cursor={"pointer"}
                   onClick={() => navigate('/lead', { state: 'sold' })}
                   p={2} m={1} textAlign={"center"}>
-                  <Heading size="sm" pb={3} color={"#d6401d"}>Sold Leads </Heading>
-                  <Text fontWeight={600} color={"#d6401d"}><CountUpComponent targetNumber={findLeadStatus("sold")} /></Text>
+                  <Heading size="sm" pb={3} color={"#fca5a5"}>Sold Leads </Heading>
+                  <Text fontWeight={600} color={"#fca5a5"}><CountUpComponent targetNumber={findLeadStatus("sold")} /></Text>
                 </Box>
               </GridItem>
             </Grid>
@@ -322,12 +322,12 @@ export default function UserReports() {
           <Heading size="md" pb={3}>Task Statistics</Heading>
           <Grid templateColumns="repeat(12, 1fr)" gap={2} mb={2}>
             <GridItem colSpan={{ base: 12 }}>
-              <Box backgroundColor={"#ebf5ff"}
+              <Box backgroundColor={"rgba(209,207,192,0.1)"}
                 onClick={() => navigate('/task')}
                 borderRadius={"10px"} cursor={'pointer'}
                 p={2} m={1} textAlign={"center"}>
-                <Heading size="sm" pb={3} color={"#1f7eeb"}>Total Tasks </Heading>
-                <Text fontWeight={600} color={"#1f7eeb"}><CountUpComponent targetNumber={allData?.taskData?.length || 0} /></Text>
+                <Heading size="sm" pb={3} color={"#D1CFC0"}>Total Tasks </Heading>
+                <Text fontWeight={600} color={"#D1CFC0"}><CountUpComponent targetNumber={allData?.taskData?.length || 0} /></Text>
               </Box>
             </GridItem>
           </Grid>

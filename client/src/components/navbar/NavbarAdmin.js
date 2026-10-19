@@ -39,14 +39,14 @@ export default function AdminNavbar(props) {
     routes,
   } = props;
   // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
-  let mainText = useColorModeValue("navy.700", "white");
+  let mainText = "#ECECE9";
   let secondaryText = useColorModeValue("gray.700", "white");
   let navbarPosition = "fixed";
   let navbarFilter = "none";
   let navbarBackdrop = "blur(20px)";
   let navbarShadow = "none";
-  let navbarBg = useColorModeValue("#FAF9F5", "rgba(20,20,20,0.92)");
-  let navbarBorder = "transparent";
+  let navbarBg = "#141414";
+  let navbarBorder = "rgba(255,255,255,0.06)";
   let secondaryMargin = "-9px";
   let paddingX = "15px";
   let gap = "0px";
@@ -103,7 +103,7 @@ export default function AdminNavbar(props) {
         // xl: openSidebar === true ? 'calc(100vw - 286px)' : 'calc(100vw - 80px)',
         // '2xl': openSidebar === true ? 'calc(100vw - 286px)' : 'calc(100vw - 80px)'
       }}
-      sx={{ boxShadow: "14px 17px 40px 4px rgba(112, 144, 176, 0.08)" }}
+      sx={{ boxShadow: "none", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
     >
       <Flex
         w="100%"

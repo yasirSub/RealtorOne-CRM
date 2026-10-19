@@ -331,6 +331,7 @@ export default function User(props) {
           />
           <Box
             float="right"
+            bg="#141414"
             minHeight="100vh"
             height="100%"
             overflow="auto"

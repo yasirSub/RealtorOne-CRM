@@ -19,6 +19,10 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 
+try {
+  localStorage.setItem("chakra-ui-color-mode", "dark");
+} catch (e) {}
+
 function App() {
   const token =
     localStorage.getItem("token") || sessionStorage.getItem("token");
