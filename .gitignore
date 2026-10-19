@@ -1,6 +1,7 @@
 node_modules
-package-lock.json
 yarn.lock
+!client/package-lock.json
+!server/package-lock.json
 build
 
 # dependencies

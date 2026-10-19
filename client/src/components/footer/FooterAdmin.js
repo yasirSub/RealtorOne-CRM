@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 
 export default function Footer() {
-  const textColor = useColorModeValue("blue.700", "white");
+  const textColor = useColorModeValue("#5C584E", "white");
   const { toggleColorMode } = useColorMode();
   return (
     <Flex
@@ -44,20 +44,19 @@ export default function Footer() {
             fontWeight="500"
             color={textColor}
             target="_blank"
-            href="https://prolinkinfotech.com/"
+            href="https://realtoronehub.com"
           >
             {" "}
-            Prolink Infotech.
-          </Link>{" "}
-          Need help, facing issues, or looking for a new feature? Contact us for
-          paid support and services at{" "}
+            Realtor One
+          </Link>
+          {" · "}
           <Link
-            href="mailto:alternatecrm@gmail.com"
+            href="mailto:info@realtoronehub.com"
             fontWeight="500"
             color={textColor}
             target="_blank"
           >
-            alternatecrm@gmail.com
+            info@realtoronehub.com
           </Link>
         </Text>
       </Text>

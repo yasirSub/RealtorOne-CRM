@@ -1,16 +1,11 @@
-// Chakra imports
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Footer from "components/footer/FooterAuth";
-import FixedPlugin from "components/fixedPlugin/FixedPlugin";
-import { Link } from "react-router-dom";
-// Custom components
-// Assets
+import RealtorOneMark from "components/brand/RealtorOneMark";
 
 function AuthIllustration(props) {
-  const { children, illustrationBackground } = props;
-  // Chakra color mode
+  const { children } = props;
   return (
-    <Flex h="max-content">
+    <Flex h="max-content" bg="#FAF9F5">
       <Flex
         h={{
           sm: "initial",
@@ -36,39 +31,37 @@ function AuthIllustration(props) {
           borderBottomLeftRadius={{ lg: "120px", xl: "200px" }}
           justifyContent="center"
           position="absolute"
-          flexDirection={"column"}
-          alignItems={"center"}
-          // bg={'black'}
-          overflow={"hidden"}
+          flexDirection="column"
+          alignItems="center"
+          bg="#141414"
+          overflow="hidden"
           right="0px"
+          px="48px"
         >
-          <Link
-            to="https://prolinkinfotech.com/"
-            target="_blank"
-            style={{ height: "50%", width: "50%" }}
+          <RealtorOneMark h="148px" />
+          <Text
+            mt="28px"
+            color="#D1CFC0"
+            fontFamily="Outfit, Inter, sans-serif"
+            fontWeight="600"
+            fontSize="13px"
+            letterSpacing="0.22em"
+            textTransform="uppercase"
           >
-            <Flex
-              bg={`url(${illustrationBackground})`}
-              justify="center"
-              align="center"
-              w="100%"
-              h="100%"
-              bgSize="cover"
-              bgPosition="50%"
-            />
-          </Link>
-          {/* <Box
-            border={'1px solid'}
-            p={4}
-            borderRadius={10}
+            CRM
+          </Text>
+          <Text
+            mt="10px"
+            color="#A39E92"
+            fontSize="sm"
+            textAlign="center"
+            maxW="280px"
           >
-            Hi
-          </Box> */}
+            Leads, properties, and follow-ups in one place.
+          </Text>
         </Box>
         <Footer />
       </Flex>
-      {/* CHANGE THEME COLOR BUTTON LIGHT-DARK */}
-      {/* <FixedPlugin /> */}
     </Flex>
   );
 }

@@ -10,7 +10,7 @@ import {
 // icon
 import React from "react";
 import { AiFillFolderOpen, AiOutlineMail } from "react-icons/ai";
-import { FaCalendarAlt, FaRupeeSign, FaTasks, FaWpforms , FaPiggyBank} from "react-icons/fa";
+import { FaCalendarAlt, FaRupeeSign, FaTasks, FaWpforms } from "react-icons/fa";
 import { LuBuilding2 } from "react-icons/lu";
 import { PiPhoneCallBold } from "react-icons/pi";
 import { FaCreativeCommonsBy } from "react-icons/fa";
@@ -26,10 +26,7 @@ import { GrValidate } from "react-icons/gr";
 import { VscFileSubmodule } from "react-icons/vsc";
 import { HiTemplate } from "react-icons/hi";
 import { TbBulb } from "react-icons/tb";
-import { FaDiagramProject } from "react-icons/fa6";
-import { BsBlockquoteRight } from "react-icons/bs";
 import { RiAccountCircleFill } from "react-icons/ri";
-import { TbInvoice } from "react-icons/tb";
 import { TbFileInvoice } from "react-icons/tb";
 // Admin Imports
 const MainDashboard = React.lazy(() => import("views/admin/default"));
@@ -39,18 +36,6 @@ const Contact = React.lazy(() => import("views/admin/contact"));
 const ContactView = React.lazy(() => import("views/admin/contact/View"));
 const ContactImport = React.lazy(
   () => import("views/admin/contact/components/ContactImport")
-);
-
-// const Quotes = React.lazy(() => import("views/admin/quotes"));
-// const QuotesView = React.lazy(() => import("views/admin/quotes/View"));
-// const QuotesImport = React.lazy(
-//   () => import("views/admin/quotes/components/QuotesImport"),
-// );
-
-const Quotes = React.lazy(() => import("views/admin/newQuotes"));
-const QuotesView = React.lazy(() => import("views/admin/newQuotes/View"));
-const QuotesImport = React.lazy(
-  () => import("views/admin/quotes/components/QuotesImport")
 );
 
 const Invoices = React.lazy(() => import("views/admin/invoice"));
@@ -71,15 +56,11 @@ const PropertyImport = React.lazy(() => import("views/admin/property/components/
 //   () => import("views/admin/property/components/PropertyImport")
 // );
 
-const BankDetails = React.lazy(()=>import("views/admin/bankDetails/BankDetails.js"))
-const BankDetailsView = React.lazy(()=> import("views/admin/bankDetails/View.js"))
 const Lead = React.lazy(() => import("views/admin/lead"));
 const LeadView = React.lazy(() => import("views/admin/lead/View"));
 const LeadImport = React.lazy(
   () => import("views/admin/lead/components/LeadImport")
 );
-
-const Communication = React.lazy(() => import("views/admin/communication"));
 
 const Task = React.lazy(() => import("views/admin/task"));
 const TaskView = React.lazy(
@@ -113,7 +94,6 @@ const templateView = React.lazy(
 const SignInCentered = React.lazy(() => import("views/auth/signIn"));
 // admin setting
 const AdminSetting = React.lazy(() => import("views/admin/adminSetting"));
-const validation = React.lazy(() => import("views/admin/validation"));
 const module = React.lazy(() => import("views/admin/moduleName"));
 const Opportunities = React.lazy(() => import("views/admin/opportunities"));
 const OpportunitiesView = React.lazy(
@@ -126,16 +106,6 @@ const Account = React.lazy(() => import("views/admin/account"));
 const AccountView = React.lazy(() => import("views/admin/account/View"));
 const AccountImport = React.lazy(
   () => import("views/admin/account/components/AccountImport")
-);
-const Opportunityproject = React.lazy(
-  () => import("views/admin/opportunityproject")
-);
-const OpportunityView = React.lazy(
-  () => import("views/admin/opportunityproject/View")
-);
-const OpportunityProjectImport = React.lazy(
-  () =>
-    import("views/admin/opportunityproject/components/OpportunityprojectImport")
 );
 
 const routes = [

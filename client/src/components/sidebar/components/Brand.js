@@ -1,17 +1,10 @@
-// Chakra imports
-import { Flex, Heading, Image, useColorModeValue } from "@chakra-ui/react";
-
-// Custom components
-import { HSeparator } from "components/separator/Separator";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchImage } from "../../../redux/slices/imageSlice";
+import { Flex, Image } from "@chakra-ui/react";
+import RealtorOneMark from "components/brand/RealtorOneMark";
 
 export function SidebarBrand(props) {
   const { setOpenSidebar, openSidebar, from, largeLogo } = props;
-
-  //   Chakra color mode
-  let logoColor = useColorModeValue("navy.700", "white");
+  const uploaded =
+    largeLogo && (largeLogo[0]?.logoLgImg || largeLogo[0]?.logoSmImg);
 
   return (
     <Flex
@@ -21,33 +14,29 @@ export function SidebarBrand(props) {
         position: "sticky",
         top: "0",
         left: "0",
-        background: "#fff",
+        background: "#141414",
+        zIndex: 2,
       }}
     >
-      <Flex>
-        {largeLogo && (largeLogo[0]?.logoLgImg || largeLogo[0]?.logoSmImg) ? (
+      <Flex py={3} px={openSidebar ? 4 : 2}>
+        {uploaded ? (
           <Image
-            style={{ width: "100%", height: "52px" }}
+            style={{ width: "100%", height: "52px", objectFit: "contain" }}
             src={
               openSidebar === true
                 ? largeLogo[0]?.logoLgImg
                 : largeLogo[0]?.logoSmImg
-            } // Set the source path of your image
-            alt="Logo" // Set the alt text for accessibility
+            }
+            alt="Realtor One"
             cursor="pointer"
             onClick={() => !from && setOpenSidebar(!openSidebar)}
             userSelect="none"
-            my={2}
           />
         ) : (
-          <Heading
-            my={4}
-            cursor={"pointer"}
+          <RealtorOneMark
+            compact={openSidebar !== true}
             onClick={() => !from && setOpenSidebar(!openSidebar)}
-            userSelect={"none"}
-          >
-            {openSidebar === true ? "Prolink" : "Pr"}
-          </Heading>
+          />
         )}
       </Flex>
     </Flex>

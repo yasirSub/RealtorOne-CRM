@@ -2,7 +2,6 @@
 import {
   Box,
   Flex,
-  Heading,
   Image,
   Link,
   Text,
@@ -16,6 +15,7 @@ import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchImage } from "../../redux/slices/imageSlice";
+import RealtorOneMark from "components/brand/RealtorOneMark";
 
 export default function AdminNavbar(props) {
   const [scrolled, setScrolled] = useState(false);
@@ -45,7 +45,7 @@ export default function AdminNavbar(props) {
   let navbarFilter = "none";
   let navbarBackdrop = "blur(20px)";
   let navbarShadow = "none";
-  let navbarBg = useColorModeValue("#fff", "rgba(11,20,55,0.5)");
+  let navbarBg = useColorModeValue("#FAF9F5", "rgba(20,20,20,0.92)");
   let navbarBorder = "transparent";
   let secondaryMargin = "-9px";
   let paddingX = "15px";
@@ -168,19 +168,10 @@ export default function AdminNavbar(props) {
                 my={2}
               />
             ) : (
-              <Heading
-                my={4}
-                style={{
-                  width: openSidebar ? "165px" : "60px",
-                  height: "52px",
-                  objectFit: "contain",
-                }}
-                cursor={"pointer"}
+              <RealtorOneMark
+                compact={openSidebar !== true}
                 onClick={() => !props?.from && setOpenSidebar(!openSidebar)}
-                userSelect={"none"}
-              >
-                {openSidebar === true ? "Prolink" : "Pr"}
-              </Heading>
+              />
             )}
           </Flex>
           <Box
@@ -202,9 +193,7 @@ export default function AdminNavbar(props) {
                 my={2}
               />
             ) : (
-              <Heading my={4} cursor={"pointer"} userSelect={"none"}>
-                {openSidebar === true ? "Prolink" : "Pr"}
-              </Heading>
+              <RealtorOneMark compact />
             )}
           </Link>
 
@@ -216,8 +205,10 @@ export default function AdminNavbar(props) {
             ps="30px"
             display={{ sm: "none", xl: "flex" }}
             borderRadius="inherit"
-            fontWeight="bold"
-            fontSize="34px"
+            fontWeight="600"
+            fontFamily="Outfit, Inter, sans-serif"
+            fontSize="28px"
+            letterSpacing="-0.03em"
             textTransform={"capitalize"}
             _hover={{ color: { mainText } }}
             _active={{

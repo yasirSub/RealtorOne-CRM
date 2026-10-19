@@ -1,0 +1,49 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - crm-mongo:/data/db
+    networks:
+      - crm
+
+  api:
+    build: ./server
+    restart: unless-stopped
+    environment:
+      DB_URL: mongodb://mongo:27017
+      DB: RealtorOneCrm
+    depends_on:
+      - mongo
+    volumes:
+      - crm-uploads:/app/uploads
+    networks:
+      - crm
+
+  web:
+    build:
+      context: ./client
+      args:
+        REACT_APP_BASE_URL: https://crm.srv1872095.hstgr.cloud/
+    restart: unless-stopped
+    depends_on:
+      - api
+    networks:
+      - crm
+      - traefik-proxy
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik-proxy
+      - traefik.http.routers.realtorone-crm.entrypoints=websecure
+      - traefik.http.routers.realtorone-crm.rule=Host(`crm.srv1872095.hstgr.cloud`)
+      - traefik.http.routers.realtorone-crm.tls.certresolver=letsencrypt
+      - traefik.http.services.realtorone-crm.loadbalancer.server.port=80
+
+networks:
+  crm:
+  traefik-proxy:
+    external: true
+
+volumes:
+  crm-mongo:
+  crm-uploads:

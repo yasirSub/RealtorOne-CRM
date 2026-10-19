@@ -66,7 +66,7 @@ export default function SidebarDocs() {
           mb="6px"
           textAlign="center"
         >
-          Improve your development process and start doing more with Horizon UI
+          Run your pipeline the Realtor One way
           PRO!
         </Text>
       </Flex>

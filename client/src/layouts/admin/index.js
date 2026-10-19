@@ -180,7 +180,7 @@ export default function Dashboard(props) {
   };
 
   const getActiveRoute = (routes) => {
-    let activeRoute = "Prolink";
+    let activeRoute = "Realtor One";
     for (let i = 0; i < routes?.length; i++) {
       if (routes[i]?.collapse) {
         let collapseActiveRoute = getActiveRoute(routes[i]?.items);
@@ -370,7 +370,7 @@ export default function Dashboard(props) {
               <Box className="header">
                 <Navbar
                   onOpen={onOpen}
-                  logoText={"Horizon UI Dashboard PRO"}
+                  logoText={"Realtor One"}
                   brandText={getActiveRoute(routes)}
                   secondary={getActiveNavbar(routes)}
                   message={getActiveNavbarText(routes)}

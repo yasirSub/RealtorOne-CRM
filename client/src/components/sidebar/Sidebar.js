@@ -7,7 +7,6 @@ import {
   Drawer,
   DrawerBody,
   Icon,
-  useColorModeValue,
   DrawerOverlay,
   useDisclosure,
   DrawerContent,
@@ -29,12 +28,8 @@ function Sidebar(props) {
   const { routes, setOpenSidebar, openSidebar, largeLogo } = props;
 
   let variantChange = "0.2s linear";
-  let shadow = useColorModeValue(
-    "14px 17px 40px 4px rgba(112, 144, 176, 0.08)",
-    "unset",
-  );
-  // Chakra Color Mode
-  let sidebarBg = useColorModeValue("white", "navy.800");
+  let shadow = "none";
+  let sidebarBg = "#141414";
   let sidebarMargins = "0px";
   const { isOpen, onOpen, onClose } = useDisclosure();
   // SIDEBAR
@@ -55,6 +50,7 @@ function Sidebar(props) {
         minH="100%"
         overflowX="hidden"
         boxShadow={shadow}
+        borderRight="1px solid rgba(255,255,255,0.06)"
       >
         <Scrollbars
           autoHide
@@ -76,8 +72,8 @@ function Sidebar(props) {
 
 // FUNCTIONS
 export function SidebarResponsive(props) {
-  let sidebarBackgroundColor = useColorModeValue("white", "navy.800");
-  let menuColor = useColorModeValue("gray.400", "white");
+  let sidebarBackgroundColor = "#141414";
+  let menuColor = "#D1CFC0";
   // // SIDEBAR
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();

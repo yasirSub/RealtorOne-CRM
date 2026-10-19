@@ -23,7 +23,7 @@ import {
 
 // Custom components
 import IconBox from "components/icons/IconBox";
-import { HorizonLogo } from "components/icons/Icons";
+import RealtorOneMark from "components/brand/RealtorOneMark";
 import { SidebarResponsive } from "components/sidebar/Sidebar";
 import { SidebarContext } from "contexts/SidebarContext";
 
@@ -77,7 +77,6 @@ export default function AuthNavbar(props) {
   let mainObject = getLinksCollapse("Main Pages");
   let dashboardsObject = getLinks("Dashboards");
   let nftsObject = getLinks("NFTs");
-  let logoColor = useColorModeValue("white", "white");
   // Chakra color mode
 
   const textColor = useColorModeValue("navy.700", "white");
@@ -101,7 +100,7 @@ export default function AuthNavbar(props) {
       color={mainText}
     >
       <Stack direction="row" spacing="12px" align="center" justify="center">
-        <HorizonLogo h="26px" w="175px" color={logoColor} />
+        <RealtorOneMark h="40px" />
       </Stack>
       <Text fontsize="sm" mt="3px">
         {logoText}
@@ -121,7 +120,7 @@ export default function AuthNavbar(props) {
         alignItems="center"
         color={mainText}
       >
-        <HorizonLogo h="26px" w="175px" my="32px" color={logoColor} />
+        <RealtorOneMark h="40px" />
       </Link>
     );
     // mainText = useColorModeValue("gray.700", "gray.200");

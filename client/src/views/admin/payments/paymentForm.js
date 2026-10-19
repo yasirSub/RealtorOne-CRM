@@ -41,7 +41,7 @@ export default function PaymentForm() {
             quantity: 1,
             price: values?.amount,
             name: values?.name,
-            description: "send to Prolink",
+            description: "Realtor One",
           },
         ],
         customer_email: values?.email,

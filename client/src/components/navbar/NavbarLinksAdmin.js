@@ -200,7 +200,7 @@ export default function HeaderLinks(props) {
               borderRadius="8px"
               mb="10px"
             >
-              <ItemContent info="Horizon UI Dashboard PRO" aName="Alicia" />
+              <ItemContent info="Welcome to Realtor One CRM" aName="Realtor One" />
             </MenuItem>
             <MenuItem
               _hover={{ bg: "none" }}
@@ -210,8 +210,8 @@ export default function HeaderLinks(props) {
               mb="10px"
             >
               <ItemContent
-                info="Horizon Design System Free"
-                aName="Josh Henry"
+                info="Your pipeline is ready"
+                aName="Realtor One"
               />
             </MenuItem>
           </Flex>
@@ -225,8 +225,8 @@ export default function HeaderLinks(props) {
           <Avatar
             _hover={{ cursor: "pointer" }}
             color="white"
-            name={user || "Prolink Infotech"}
-            bg="#11047A"
+            name={user || "Realtor One"}
+            bg="#1B4F8A"
             size="sm"
             w="40px"
             h="40px"
